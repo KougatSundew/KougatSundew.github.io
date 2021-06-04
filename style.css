@@ -1,0 +1,72 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'source_sans_proregular';
+}
+:root {
+    --height-menu: 5em
+}
+header {
+    height: var(--height-menu);
+    background-color: aqua;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-areas: "username nav";
+}
+main {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    height: 40em;
+    width: 100%;
+    background-color: yellowgreen;
+}
+footer {
+    height: var(--height-menu);
+    background-color: blueviolet;
+    width: 100%;
+}
+.username {
+    width: 100%;
+    height: 100%;
+    grid-area: username;
+    font-family: 'source_sans_probold';
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav {
+    width: 100%;
+    height: 100%;
+    grid-area: nav;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav > a {
+    text-decoration: none;
+}
+nav li a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 14px;
+}
+nav li a:active {
+    background-color: aqua;
+}
+nav li a:hover {
+    transition: all 150ms ease;
+    border-bottom: 4px solid black;
+    margin-bottom: -4px;
+}
