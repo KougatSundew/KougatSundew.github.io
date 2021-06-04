@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     padding: 0;
     margin: 0;
@@ -5,9 +8,12 @@ body {
     flex-direction: column;
     font-family: 'source_sans_proregular';
     animation: fadeScrollIn 4s;
+    /* background-color: black; */
+    color: white;
 }
 :root {
-    --height-menu: 5em
+    --height-menu: 5em;
+    --height-footer: 40vh;
 }
 #wrapper {
     height: auto;
@@ -17,7 +23,7 @@ body {
 }
 header {
     height: var(--height-menu);
-    background-color: aqua;
+    background-color: #3D4D42;
     width: 100%;
     display: grid;
     grid-template-columns: 25% 75%;
@@ -25,15 +31,47 @@ header {
 }
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 120em;
-    
-    background-color: yellowgreen;
+}
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #3D4D42;
+}
+.welcome h1 {
+    font-size: 86px;
+}
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: 110vh;
+    background-color: #28332C;
+}
+#projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 100vh;
+}
+#projects-wrapper h2 {
+    font-size: 42px;
+    border-bottom: 4px solid white;
+}
+.project-wrapper {
+    width: 100%;
+    height: auto;
 }
 footer {
-    height: var(--height-menu);
-    background-color: blueviolet;
+    height: var(--height-footer);
+    background-color: white;
     width: 100%;
 }
 .username {
@@ -45,17 +83,25 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor:default;
+}
+.username span:hover {
+    transition: all 150ms ease;
+    border-bottom: 4px solid white;
+    margin-bottom: -4px;
 }
 nav {
     width: 100%;
     height: 100%;
     grid-area: nav;
     display: flex;
+    
     justify-content: flex-end;
     align-items: center;
-    position: sticky;
 }
 nav ul {
+    display: flex;
+    flex-direction: row;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -75,10 +121,61 @@ nav li a:active {
 }
 nav li a:hover {
     transition: all 150ms ease;
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid white;
     margin-bottom: -4px;
 }
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #593042;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    transition: all 250ms ease;
+}
+#topButton:hover {
+    border-radius: 52px;
+    transition: all 500ms ease;
+}
+#topButtonImg {
+    fill: white;
+}
+.show {
+    animation-play-state: running;
+    animation: fadeIn 2s;
+}
+.hidden {
+    animation-play-state: running;
+    animation: fadeOut 2s;
+}
+#topButtonImg {
+    width: 64px;
+    height: auto;
+}
 /*ANIMATIONS*/
+@keyframes fadeOut {
+    from {
+        display: block !important;
+    }
+    to {
+        display: none !important;
+    }
+}
+@keyframes fadeIn {
+    from {
+        display: none !important;
+    }
+    to {
+        display: block !important;
+    }
+}
 @keyframes fadeInUp {
     from {
         overflow-y: hidden;

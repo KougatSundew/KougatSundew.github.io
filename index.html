@@ -10,16 +10,47 @@
 </head>
 <body>
     <div id="wrapper">
+        <button id="topButton" onclick="topFunction()"><img id="topButtonImg" src="img/chevron-up.png" alt=""></button>
         <header>
-            <div class="username">Spöket</div>
+            <div class="username"><span>Spöket</span></div>
             <nav>
                 <ul>
-                    <li><a href="">WORK</a></li>
+                    <li><a href="#projects">WORK</a></li>
+                    <li><a href="">ABOUT</a></li>
                 </ul>
             </nav>
         </header>
-        <main><h1>Welcome!</h1></main>
+        <main>
+            <div class="welcome">
+                <h1 id="header">Welcome</h1>
+            </div>
+            <div id="projects">
+                <div id="projects-wrapper">
+                    <h2>PROJECTS</h2>
+                    <div class="project-wrapper">
+
+                    </div>
+                </div>
+            </div>
+        </main>
         <footer></footer>
     </div>
+    <script>
+        var button = document.getElementById("topButton");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 </html>
